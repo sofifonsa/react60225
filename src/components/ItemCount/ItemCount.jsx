@@ -1,17 +1,7 @@
-import { useState } from "react"
+import { useCounter } from "../../hooks/UseCounter"
 
 export const ItemCount = () => {
-
-    const [count, setCount] = useState(1)
-
-    const handleIncrement = () => {
-        setCount(count + 1)
-    }
-
-    const handleDecrement = () => {
-        if (count > 1)
-            setCount(count - 1)
-    }
+    const { count, increment, decrement, reset } = useCounter(1, 10, 1)
 
     const handleAddToCart = () => {
         console.log("Producto agregado al carrito")
@@ -20,14 +10,17 @@ export const ItemCount = () => {
     return (
         <div className="container mx-auto mt-8">
             <div className="flex items-center justify-center space-x-4">
-                <button className="bg-gray-500 text-black px-4 py-2 rounded" onClick={handleDecrement}>
+                <button className="bg-gray-500 text-white px-4 py-2 rounded" onClick={decrement}>
                     -
                 </button>
                 <span className="text-xl font-bold">{count}</span>
-                <button className="bg-gray-500 text-black px-4 py-2 rounded" onClick={handleIncrement}>
+                <button className="bg-gray-500 text-white px-4 py-2 rounded" onClick={increment}>
                     +
                 </button>
-                <button className="bg-indigo-500 text-black px-4 py-2 rounded" onClick={handleAddToCart}>
+                <button className="bg-gray-500 text-white px-4 py-2 rounded" onClick={reset}>
+                    Reset
+                </button>
+                <button className="bg-indigo-500 text-white px-4 py-2 rounded" onClick={handleAddToCart}>
                     Agregar al carrito
                 </button>
             </div>

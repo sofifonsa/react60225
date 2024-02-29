@@ -1,0 +1,40 @@
+[
+    {
+        "id": 1,
+        "title": "Dublin",
+        "place": "-Dynamic, Historical-",
+        "price": 2675,
+        "stock": 108,
+        "img": "1.jpg",
+        "Category": "Packages"
+
+    },
+    {
+        "id": 2,
+        "title": "Cork",
+        "place": "-Vibrant, Welcoming-",
+        "price": 2480,
+        "stock": 122,
+        "img": "2.jpg",
+        "Category": "Study"
+    },
+    {
+        "id": 3,
+        "title": "Galway",
+        "place": "-Cultural, Picturesque-",
+        "price": 2600,
+        "stock": 100,
+        "img": "3.jpg",
+        "Category": "Jobs"
+    },
+    {
+        "id": 4,
+        "title": "Dingle",
+        "place": "-Coastal, Charming-",
+        "price": 2350,
+        "stock": 130,
+        "img": "4.jpg",
+        "Category": "Destinations"
+    }
+    
+]

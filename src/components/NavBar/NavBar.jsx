@@ -1,24 +1,18 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import CartWidget from '..//Cart/CartWidget';
-import Logo from '../../Logo'
-function NavBar() {
-return (
-    <>
-    <Navbar bg="dark" data-bs-theme="dark">
-        <Container>
-        <Navbar.Brand href="#home"> <Logo/> </Navbar.Brand>
-        <Navbar.Brand href="#home">GalwaY HomE</Navbar.Brand>
-        <Nav className="me-auto">
-            <Nav.Link href="#home">Conocenos</Nav.Link>
-            <Nav.Link href="#features">Servicios</Nav.Link>
-            <Nav.Link href="#pricing">Tipos de Programas Working Holidays</Nav.Link>
-                        <Nav.Link href="#pricing"> <CartWidget /> </Nav.Link>
-        </Nav>
-        </Container>
-    </Navbar>
-    </>
-)}
-
-export default NavBar;
+import { CartWidget } from "../Cart/CartWidget"
+import { Categories } from "../Categories/Categories"
+import  Logo  from "../../Logo"
+export const NavBar = () => {
+    return (
+        <nav className="bg-green-800 p-4">
+            <div className="container mx-auto">
+                <div className="flex items-center justify-between">
+                    <div className="text-white"><Logo/></div>
+                    <ul className="flex space-x-4">
+                        < Categories />
+                        < CartWidget />
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    )
+}

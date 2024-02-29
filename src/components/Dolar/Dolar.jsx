@@ -17,10 +17,10 @@ export const Dolar = () => {
                 if (data && data.mayorista && data.tarjeta && data.oficial) {
                     const molde = (
                         <div>
-                            <h3>Cotizacion del dolar</h3>
-                            <p>Dolar Mayorista: {data.mayorista.price}</p>
-                            <p>Dolar Tarjeta: {data.tarjeta.price}</p>
-                            <p>Dolar Oficial: {data.oficial.price}</p>
+                            <h3>Dollar Exchange Rate</h3>
+                            <p>Dollar Wholesaler: {data.mayorista.price}</p>
+                            <p>Dollar Card: {data.tarjeta.price}</p>
+                            <p>Dollar Official: {data.oficial.price}</p>
                         </div>
                     );
                     setDolar(molde);
