@@ -17,7 +17,7 @@ export const Categories = () => {
             </li>
 
             <li className="text-white">
-                <Link to={'category/Packages'}>
+                <Link to={'category/Types of trips'}>
                     <button className="bg-orange-400 text-white px-4 py-2 rounded flex items-center">
                     <GiJetFighter />
                     </button>

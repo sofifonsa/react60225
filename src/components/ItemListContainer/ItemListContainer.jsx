@@ -9,7 +9,7 @@ export const ItemListContainer = () => {
     useEffect(() => {
         fetch('../Data/Productos.json')
             .then(response => response.json())
-            .then(prods => {
+        .then(prods => {
                 if (cid) {
                     const productosFiltrados = prods.filter(prod => prod.Category == cid)
                     setProducts(productosFiltrados)
@@ -24,7 +24,7 @@ export const ItemListContainer = () => {
 
     return (
         <div>
-            <ItemList products={products} />
+            <ItemList products={products} plantilla="Item" />
         </div>
-    )
+)
 }

@@ -1,39 +1,41 @@
 import { Link } from "react-router-dom"
 import { useCounter } from ".././hooks/UseCounter"
+import { useCarritoContext } from "../Context/CartContext"
 
 export const ItemDetail = ({ item }) => {
+    const { addItem } = useCarritoContext()
     const { count, increment, decrement, reset } = useCounter(1, item.stock, 1)
 
     const handleAddToCart = () => {
+        addItem(item, count)
         console.log("Producto agregado al carrito")
     }
     return (
 
         <div className="bg-white p-8 rounded-lg max-w-md">
             <Link to={'/'}>
-                <button className="absolute top-4 right-4 text-gray-700 hover:text-gray-900">Cerrar</button>
+                <button className="absolute top-4 right-4 bg-white text-gray-700 hover:text-gray-900">Close</button>
             </Link>
 
-            <img className="w-full h-64 object-cover mb-6" src={`../img/${item.img}`} alt={`Imagen de ${item.title}`} />
+            <img className="w-full h-64 object-cover mb-6" src={`${item.img}`} alt={`Imagen de ${item.title}`} />
             <div className="text-center">
                 <h2 className="text-2x1 font-bold mb-2">{item.title}</h2>
-                <p className="text-gray-700 mb-2 font-semibold">Destinos: {item.size}</p>
                 <p className="text-gray-700 mb-2 font-semibold">Stock: {item.stock}</p>
-                <p className="text-gray-700 mb-2 font-semibold">Precio: ${item.price}</p>
+                <p className="text-gray-700 mb-2 font-semibold">Price: ${item.price}</p>
                 <div className="container mx-auto mt-8">
                     <div className="flex items-center justify-center space-x-4">
-                        <button className="bg-gray-500 text-white px-4 py-2 rounded" onClick={decrement}>
+                        <button className="bg-orange-600 text-white px-4 py-2 rounded" onClick={decrement}>
                             -
                         </button>
                         <span className="text-xl font-bold">{count}</span>
-                        <button className="bg-gray-500 text-white px-4 py-2 rounded" onClick={increment}>
+                        <button className="bg-orange-600 text-white px-4 py-2 rounded" onClick={increment}>
                             +
                         </button>
-                        <button className="bg-gray-500 text-white px-4 py-2 rounded" onClick={reset}>
+                        <button className="bg-orange-600 text-white px-4 py-2 rounded" onClick={reset}>
                             Reset
                         </button>
-                        <button className="bg-indigo-500 text-white px-4 py-2 rounded" onClick={handleAddToCart}>
-                            Agregar al carrito
+                        <button className="bg-green-800 text-white px-4 py-2 rounded-md hover:bg-orange-600 focus:outline-none font-style: italic" onClick={handleAddToCart}>
+                            Add to cart
                         </button>
                     </div>
                 </div>

@@ -9,10 +9,13 @@ import { Cart } from './components/cart'
 import { Checkout } from './components/CheckOut'
 import { ItemDetailsContainer } from './components/ItemDetailsContainer'
 import { NotFound } from './components/NotFound'
+import { CarritoProvider } from './Context/CartContext.jsx'
+
 export const App = () => {
   return (
     <>
       <BrowserRouter>
+      <CarritoProvider>
       <NavBar />
       <Routes>
         <Route path='/' element={<ItemListContainer />} />
@@ -24,6 +27,7 @@ export const App = () => {
       </Routes>
       <Dolar />
       <Footer />
+      </CarritoProvider>
     </BrowserRouter>
     </>
   )

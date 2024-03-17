@@ -21,7 +21,7 @@ export const ItemCount = () => {
                     Reset
                 </button>
                 <button className="bg-indigo-500 text-white px-4 py-2 rounded" onClick={handleAddToCart}>
-                    Agregar al carrito
+                    Add To Cart
                 </button>
             </div>
         </div>
