@@ -10,13 +10,14 @@ import { Checkout } from './components/CheckOut'
 import { ItemDetailsContainer } from './components/ItemDetailsContainer'
 import { NotFound } from './components/NotFound'
 import { CarritoProvider } from './Context/CartContext.jsx'
+import { ToastContainer } from 'react-toastify'
 
 export const App = () => {
   return (
-    <>
       <BrowserRouter>
       <CarritoProvider>
       <NavBar />
+      <ToastContainer />
       <Routes>
         <Route path='/' element={<ItemListContainer />} />
         <Route path='/category/:cid' element={<ItemListContainer />} />
@@ -29,6 +30,5 @@ export const App = () => {
       <Footer />
       </CarritoProvider>
     </BrowserRouter>
-    </>
   )
 }
