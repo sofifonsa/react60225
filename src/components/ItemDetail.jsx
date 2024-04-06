@@ -8,7 +8,7 @@ export const ItemDetail = ({ item }) => {
 
     const handleAddToCart = () => {
         addItem(item, count)
-        console.log("Producto agregado al carrito")
+        console.log("Product added to cart")
     }
     return (
 

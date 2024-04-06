@@ -13,14 +13,14 @@ export const ItemCart = ({ product }) => {
                 <h3 className="text-lg font-semibold">{product.title} {product.place}</h3>
             </div>
             <div className="flex items-center">
-                <button className="bg-gray-500 text-white px-4 py-2 rounded" onClick={async () => {
+                <button className="bg-orange-600 text-white px-4 py-2 rounded" onClick={async () => {
                     updateItem(product.id, count - 1)
                     decrement()
                 }}>
                     -
                 </button>
                 <span className="text-xl font-bold">{count}</span>
-                <button className="bg-gray-500 text-white px-4 py-2 rounded" onClick={() => {
+                <button className="bg-orange-600 text-white px-4 py-2 rounded" onClick={() => {
                     updateItem(product.id, count + 1)
                     increment()
                 }}>
@@ -32,7 +32,7 @@ export const ItemCart = ({ product }) => {
             </div>
             <div className="ml-4">
                 <button className="bg-red-500  text-white px4 py-2 rounded" onClick={() => removeItem(product.id)}>
-                    Eliminar
+                Eliminate
                 </button>
             </div>
         </div>
